@@ -1,9 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid'
 import {EmailInput, PasswordInput} from "../stories/LoginInput.stories.js"
-import {PrimaryButton} from "../stories/Buttons.stories.js"
-import {DefaultLoginSignupLink} from "../stories/LoginSignupLink.stories.js"
-import { withRouter } from 'react-router-dom'
+import {SubmitButton} from "../stories/Buttons.stories.js"
+import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
 class LoginForm extends React.Component {
@@ -25,8 +24,10 @@ class LoginForm extends React.Component {
         'password': this.state.password,
       }
     ).then((response) => {
-      this.props.history.push("/home")
+      console.log('success')
+      this.props.history.push("/")
     }, (error) => {
+      console.log('fail')
       console.log(error.response.data.data);
     });
   }
@@ -46,25 +47,16 @@ class LoginForm extends React.Component {
         <Grid item xs={4}>
           <EmailInput
             value={this.state.email}
-            onChange={this.handleChange}
-          >
-          </EmailInput >
+            onChange={this.handleChange} />
         </Grid>
         <Grid item xs={4}>
           <PasswordInput
             value={this.state.password}
-            onChange={this.handleChange}
-          >
-          </PasswordInput>
+            onChange={this.handleChange} />
         </Grid>
         <Grid item xs={4}>
-          <PrimaryButton
-            onClick={this.handleClick}>
-          >
-          </PrimaryButton>
-        </Grid>
-        <Grid item xs={4}>
-          <DefaultLoginSignupLink />
+          <SubmitButton
+            onClick={this.handleClick} />
         </Grid>
       </Grid>
     )

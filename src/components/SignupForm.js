@@ -1,7 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid'
-import {PrimaryButton} from "../stories/Buttons.stories.js"
-import {DefaultLoginSignupLink} from "../stories/LoginSignupLink.stories.js"
+import {SubmitButton} from "../stories/Buttons.stories.js"
 import {
   UsernameInput,
   EmailInput,
@@ -28,10 +27,7 @@ const SignupForm = () => (
         <PasswordInput />
       </Grid>
       <Grid item xs={4}>
-        <PrimaryButton />
-      </Grid>
-      <Grid item xs={4}>
-        <DefaultLoginSignupLink />
+        <SubmitButton />
       </Grid>
     </Grid>
 )

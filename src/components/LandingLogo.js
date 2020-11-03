@@ -8,10 +8,9 @@ const LandingLogo = () => (
     container
     direction="column"
     justify="center"
-    alignItems="center"
-  >
+    alignItems="center">
     <Typography variant="h1">Todo.</Typography>
-    <Box pb="4rem"></Box>
+    <Box pb="4rem" />
     <Typography variant="h5">Task lists anywhere and everywhere.</Typography>
   </Grid>
 )

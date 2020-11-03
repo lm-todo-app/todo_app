@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {DefaultInput, ErrorInput, RequiredInput} from './Input.stories.js';
 
 export default {

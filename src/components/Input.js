@@ -11,9 +11,8 @@ const Input = (props) => (
       type={props.type}
       error={props.error}
       name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-    />
+      value={props.value || ''}
+      onChange={props.onChange} />
   </Box>
 )
 

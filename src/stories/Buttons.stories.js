@@ -19,6 +19,17 @@ export const PrimaryButton = (props) => (
   </Box>
 );
 
+export const SubmitButton = (props) => (
+  <Box pb="2rem">
+    <Button
+      color="primary"
+      onClick={props.onClick}
+      variant="contained">
+      Submit
+    </Button>
+  </Box>
+);
+
 // export const SecondaryButton = () => (
 //   <Box pb="2rem">
 //     <Button

@@ -1,29 +1,24 @@
-import {useState} from 'react'
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import Landing from '../landing/Landing.js'
+
+import ProtectedRoute from '../../components/ProtectedRoute.js'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+
+import Login from '../login/Login.js'
+import Signup from '../signup/Signup.js'
 import Home from '../home/Home.js'
 
-// TODO: Follow the basic pattern below and make a "ProtectedRoute" component.
-
 const App = () => {
-  const [user, setUser] = useState(false);
-
-  if (user) {
-    return (
-    <Router>
-      <Route exact path='/home' component={Home}></Route>
-      <Redirect to='/home' />
-    </Router>
-    );
-  }
-
   return (
     <Router>
-      <Route exact path='/' component={Landing}></Route>
-      <Route exact path='/home' component={Home}></Route>
-      {/* <Redirect to='/' /> */}
+      <Switch>
+        <ProtectedRoute exact path='/' component={Home}></ProtectedRoute>
+        <Route exact path='/login' component={Login}></Route>
+        <Route exact path='/signup' component={Signup}></Route>
+        <Route path='*'>
+            <Redirect to={'/login'} />
+        </Route>
+      </Switch>
     </Router>
   )
 }
