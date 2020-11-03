@@ -5,6 +5,6 @@ export default {
   title: 'Landing/Login Form',
 };
 
-export const DefaultLoginForm = () => (
+export const Form = () => (
     <LoginForm />
 );

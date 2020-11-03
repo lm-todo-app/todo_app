@@ -9,7 +9,7 @@ export const DefaultLoginSignupLink = (props) => (
   <LoginSignupLink to={props.to} />
 );
 
-export const DefaultLoginLink = (props) => (
+export const LoginLink = (props) => (
   <LoginSignupLink
   to={props.to}
   text={"Don't have an account? "}
@@ -18,7 +18,7 @@ export const DefaultLoginLink = (props) => (
 );
 
 
-export const DefaultSignupLink = (props) => (
+export const SignupLink = (props) => (
   <LoginSignupLink
   to={props.to}
   text={"Already have an account? "}

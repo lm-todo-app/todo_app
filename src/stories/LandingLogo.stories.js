@@ -5,7 +5,6 @@ export default {
   title: 'Landing/Landing Logo',
 };
 
-// TODO: Remove default from everywhere, it's just noise.
-export const DefaultLandingLogo = () => (
+export const Logo = () => (
     <LandingLogo />
 );

@@ -1,17 +1,18 @@
 import React from "react"
-import {DefaultLoginForm} from "../../stories/LoginForm.stories.js"
-import {DefaultLandingLogo} from "../../stories/LandingLogo.stories.js"
-import {DefaultLoginLink} from "../../stories/LoginSignupLink.stories.js"
+import {Logo} from "../../stories/LandingLogo.stories.js"
+import {Form} from "../../stories/LoginForm.stories.js"
+import {LoginLink as Link} from "../../stories/LoginSignupLink.stories.js"
+import Container from '@material-ui/core/Container';
 import Box from "@material-ui/core/Box"
 
 const Login = () => (
-  <Box>
+  <Container>
     <Box height={100} />
-    <DefaultLandingLogo />
+    <Logo />
     <Box height={100} />
-    <DefaultLoginForm />
-    <DefaultLoginLink to={'/signup'} />
-  </Box>
+    <Form />
+    <Link to={'/signup'} />
+  </Container>
 )
 
 export default Login
