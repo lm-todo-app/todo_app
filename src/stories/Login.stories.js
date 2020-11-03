@@ -1,10 +1,11 @@
 import React from 'react';
-import Login from '../components/Login.js';
+import LoginForm from '../components/LoginForm.js';
 
 export default {
-  title: 'Login',
+  title: 'Login Form',
 };
 
-export const Default = () => (
-    <Login />
+// Call this login form
+export const DefaultLoginForm = () => (
+    <LoginForm />
 );

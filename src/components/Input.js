@@ -3,16 +3,22 @@ import Box from '@material-ui/core/Box'
 import TextField from '@material-ui/core/TextField'
 import InputLabel from '@material-ui/core/InputLabel'
 
-const LabelledInput = (props) => (
-    <Box>
-        <InputLabel>{props.labelValue}:</InputLabel>
-        <TextField variant="outlined" type={props.type} />
-    </Box>
+
+const Input = (props) => (
+  <Box pb="2rem">
+    <InputLabel>{props.labelValue}:</InputLabel>
+    <TextField
+      variant="outlined"
+      type={props.type}
+      error={props.error}
+      name={props.name}
+    />
+  </Box>
 )
 
 // Test for jest.
 export const sum = (a, b) => (
-    a + b
+  a + b
 )
 
-export default LabelledInput
+export default Input
