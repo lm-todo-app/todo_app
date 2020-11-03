@@ -11,15 +11,19 @@ export const DefaultInput = (props) => (
     labelValue={props.labelValue}
     type={props.type}
     name={props.name}
+    value={props.value}
+    onChange={props.onChange}
   />
 )
 
 export const ErrorInput = (props) => (
   <Input
+    error={"true"}
     labelValue={props.labelValue}
     type={props.type}
     name={props.name}
-    error={"true"}
+    value={props.value}
+    onChange={props.onChange}
   />
 )
 
@@ -28,5 +32,7 @@ export const RequiredInput = (props) => (
     labelValue={'*'+ props.labelValue}
     type={props.type}
     name={props.name}
+    value={props.value}
+    onChange={props.onChange}
   />
 )

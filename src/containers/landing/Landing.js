@@ -1,5 +1,5 @@
 import React from "react"
-import {DefaultLoginForm} from "../../stories/Login.stories.js"
+import {DefaultLoginForm} from "../../stories/LoginForm.stories.js"
 import {DefaultLandingLogo} from "../../stories/LandingLogo.stories.js"
 import Box from "@material-ui/core/Box"
 

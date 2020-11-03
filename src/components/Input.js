@@ -3,7 +3,6 @@ import Box from '@material-ui/core/Box'
 import TextField from '@material-ui/core/TextField'
 import InputLabel from '@material-ui/core/InputLabel'
 
-
 const Input = (props) => (
   <Box pb="2rem">
     <InputLabel>{props.labelValue}:</InputLabel>
@@ -12,6 +11,8 @@ const Input = (props) => (
       type={props.type}
       error={props.error}
       name={props.name}
+      value={props.value}
+      onChange={props.onChange}
     />
   </Box>
 )
