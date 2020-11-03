@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import {EmailInput, PasswordInput} from "../stories/LoginInput.stories.js"
 import {PrimaryButton} from "../stories/Buttons.stories.js"
 import {DefaultLoginSignupLink} from "../stories/LoginSignupLink.stories.js"
+import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 
 class LoginForm extends React.Component {
@@ -18,7 +19,6 @@ class LoginForm extends React.Component {
   }
 
    handleClick = (event) => {
-    console.log(this.state)
     axios.post('http://localhost:5000/login',
       {
         'email': this.state.email,
@@ -27,14 +27,11 @@ class LoginForm extends React.Component {
     ).then((response) => {
       this.props.history.push("/home")
     }, (error) => {
-      this.setState({open: true})
       console.log(error.response.data.data);
     });
   }
 
   handleChange = (event) => {
-    console.log(this.state)
-    console.log('hello world')
     this.setState({[event.target.name]: event.target.value})
   }
 
@@ -62,7 +59,7 @@ class LoginForm extends React.Component {
         </Grid>
         <Grid item xs={4}>
           <PrimaryButton
-            onClick={(event) => this.handleClick(event)}>
+            onClick={this.handleClick}>
           >
           </PrimaryButton>
         </Grid>
@@ -74,4 +71,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm
+export default withRouter(LoginForm)

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Landing from '../landing/Landing.js'
 import Home from '../home/Home.js'
 
+// TODO: Follow the basic pattern below and make a "ProtectedRoute" component.
+
 const App = () => {
   const [user, setUser] = useState(false);
 
@@ -20,7 +22,8 @@ const App = () => {
   return (
     <Router>
       <Route exact path='/' component={Landing}></Route>
-      <Redirect to='/' />
+      <Route exact path='/home' component={Home}></Route>
+      {/* <Redirect to='/' /> */}
     </Router>
   )
 }

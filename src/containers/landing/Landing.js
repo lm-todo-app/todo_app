@@ -7,7 +7,7 @@ const Landing = () => (
   <Box>
     <Box height={200} />
     <DefaultLandingLogo />
-    <Box height={200} />
+    <Box height={100} />
     <DefaultLoginForm />
   </Box>
 )
