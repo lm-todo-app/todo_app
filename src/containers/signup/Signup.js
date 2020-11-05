@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box"
 
 const Signup = () => (
   <Container>
-    <Box height={100} />
+    <Box height={80} />
     <Logo />
     <Box height={100} />
     <Form />

@@ -18,17 +18,17 @@ class LoginForm extends React.Component {
   }
 
    handleClick = (event) => {
-    axios.post('http://localhost:5000/login',
+    axios.post('http://localhost:8000/api/v1/login',
       {
         'email': this.state.email,
         'password': this.state.password,
-      }
+      },
     ).then((response) => {
       console.log('success')
       this.props.history.push("/")
     }, (error) => {
       console.log('fail')
-      console.log(error.response.data.data);
+      console.log(error);
     });
   }
 
