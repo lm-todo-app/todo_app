@@ -1,6 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class ProtectedRoute extends React.Component {
 
@@ -34,7 +35,7 @@ class ProtectedRoute extends React.Component {
     const Component = this.props.component;
 
     if (this.state.isLoading) {
-      return <div className="App">Loading...</div>;
+      return <LinearProgress />
     }
 
     if (this.state.isAuthenticated) {

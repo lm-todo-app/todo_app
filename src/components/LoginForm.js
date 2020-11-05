@@ -42,8 +42,7 @@ class LoginForm extends React.Component {
         container
         direction="column"
         alignItems="center"
-        justify="center"
-        >
+        justify="center" >
         <Grid item xs={4}>
           <EmailInput
             value={this.state.email}

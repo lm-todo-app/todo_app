@@ -30,6 +30,17 @@ export const SubmitButton = (props) => (
   </Box>
 );
 
+export const LogoutButton = (props) => (
+  <Box pb="1rem" mt="1rem">
+    <Button
+      color="primary"
+      onClick={props.onClick}
+      variant="contained">
+      Logout
+    </Button>
+  </Box>
+);
+
 export const SecondaryButton = () => (
   <Box pb="2rem">
     <Button
