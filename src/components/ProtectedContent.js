@@ -1,10 +1,8 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { withSnackbar } from 'notistack';
+import Box from '@material-ui/core/Box';
 import axios from 'axios'
 
-class ProtectedRoute extends React.Component {
+class ProtectedContent extends React.Component {
 
   constructor() {
     super()
@@ -37,7 +35,7 @@ class ProtectedRoute extends React.Component {
     const Component = this.props.component;
 
     if (this.state.isLoading) {
-      return <LinearProgress />
+      return <Box />
     }
 
     if (this.state.isAuthenticated) {
@@ -47,9 +45,9 @@ class ProtectedRoute extends React.Component {
     }
 
     return (
-      <Redirect to={'/login'} />
+      <Box />
     )
   }
 }
 
-export default withSnackbar(ProtectedRoute);
+export default ProtectedContent;

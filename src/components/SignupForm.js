@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid'
 import {SubmitButton} from "../stories/Buttons.stories.js"
 import {withRouter} from 'react-router-dom'
+import { withSnackbar } from 'notistack';
 import axios from 'axios'
 import {
   UsernameInput,
@@ -32,9 +33,10 @@ class SignupForm extends React.Component {
 
    handleClick = (event) => {
      if (!this.checkPassword()) {
-       console.log('passwords do not match')
+       this.props.enqueueSnackbar("Passwords do not match")
        return;
      }
+    // TODO: refactor this
     axios.post('http://localhost:8000/api/v1/users',
       {
         'email': this.state.email,
@@ -42,10 +44,10 @@ class SignupForm extends React.Component {
         'password': this.state.password,
       },
     ).then((response) => {
-      console.log('success')
+      this.props.enqueueSnackbar("Signup Successful, please check for confirmation email")
       this.props.history.push("/")
     }).catch((error) => {
-      console.log('fail')
+      this.props.enqueueSnackbar("Signup Failed: " + error.response.statusText)
       console.log(error.response);
     });
   }
@@ -62,27 +64,27 @@ class SignupForm extends React.Component {
         alignItems="center"
         justify="center"
         >
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <EmailInput
             value={this.state.email}
             onChange={this.handleChange} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <UsernameInput
             value={this.state.username}
             onChange={this.handleChange} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <PasswordInput
             value={this.state.password}
             onChange={this.handleChange} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <PasswordCheckInput
             value={this.state.passwordCheck}
             onChange={this.handleChange} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <SubmitButton
             onClick={this.handleClick} />
         </Grid>
@@ -91,4 +93,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default withRouter(SignupForm)
+export default withSnackbar(withRouter(SignupForm))

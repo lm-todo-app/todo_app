@@ -1,13 +1,12 @@
 import React from "react"
 import Box from "@material-ui/core/Box"
+import {DefaultNavbar} from '../../stories/Navbar.stories.js'
 import Container from '@material-ui/core/Container';
-import {DefaultNavbar as Navbar} from '../../stories/Navbar.stories.js'
 
 const Home = () => (
   <Box>
-    <Navbar />
+    <DefaultNavbar />
     <Container>
-      Home
     </Container>
   </Box>
 )
