@@ -44,3 +44,13 @@ export const PasswordInput = (props) => (
     onChange={props.onChange}
   />
 );
+
+export const PasswordCheckInput = (props) => (
+  <DefaultInput
+    labelValue={'Retype Password'}
+    type={'password'}
+    name={'passwordCheck'}
+    value={props.value}
+    onChange={props.onChange}
+  />
+);
