@@ -16,7 +16,12 @@ import { SnackbarProvider } from 'notistack';
 
 const App = () => {
   return (
-    <SnackbarProvider maxSnack={3}>
+    <SnackbarProvider
+     anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+        }}
+      maxSnack={3}>
       <Router>
         <Switch>
           <ProtectedRoute exact path='/' component={Home}></ProtectedRoute>

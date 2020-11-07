@@ -24,10 +24,15 @@ class LoginForm extends React.Component {
         'password': this.state.password,
       },
     ).then((response) => {
-      this.props.enqueueSnackbar('Login Successful')
+      this.props.enqueueSnackbar('Login Successful', {
+        variant: 'success',
+      })
       this.props.history.push("/")
     }, (error) => {
-      this.props.enqueueSnackbar("Login Failed: " + error.response.statusText)
+      this.props.enqueueSnackbar("Login Failed: " + error.response.statusText,
+        {
+          variant: 'error',
+        })
       console.log(error.response);
     });
   }

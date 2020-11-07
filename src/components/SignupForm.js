@@ -44,10 +44,16 @@ class SignupForm extends React.Component {
         'password': this.state.password,
       },
     ).then((response) => {
-      this.props.enqueueSnackbar("Signup Successful, please check for confirmation email")
+      const message = "Signup Successful, please check for confirmation email"
+      this.props.enqueueSnackbar(message, {
+        variant: 'success',
+      })
       this.props.history.push("/")
     }).catch((error) => {
-      this.props.enqueueSnackbar("Signup Failed: " + error.response.statusText)
+      this.props.enqueueSnackbar("Signup Failed: " + error.response.statusText,
+        {
+          variant: 'error',
+        })
       console.log(error.response);
     });
   }

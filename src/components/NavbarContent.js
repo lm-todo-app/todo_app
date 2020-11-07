@@ -30,7 +30,9 @@ class NavbarContent extends React.Component {
     axios.post(api + 'token/remove')
       .then(() => {
       console.log('success')
-      this.props.enqueueSnackbar("logout Successful")
+      this.props.enqueueSnackbar('Logout Successful', {
+        variant: 'success',
+      })
       this.props.history.push("/login")
     }, (error) => {
       console.log('fail')
