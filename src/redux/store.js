@@ -1,5 +1,5 @@
-import { createStore } from "redux";
-import axios from "axios";
+// import { createStore } from "redux";
+// import axios from "axios";
 
 /**
  * This is a reducer - a function that takes a current state value and an
@@ -13,47 +13,47 @@ import axios from "axios";
  * You can use any conditional logic you want in a reducer. In this example,
  * we use a switch statement, but it's not required.
  */
-function counterReducer(state = { value: 0 }, action) {
-  switch (action.type) {
-    case "counter/incremented":
-      return { value: state.value + 1 };
-    case "counter/decremented":
-      return { value: state.value - 1 };
-    default:
-      return state;
-  }
-}
+// function counterReducer(state = { value: 0 }, action) {
+//   switch (action.type) {
+//     case "counter/incremented":
+//       return { value: state.value + 1 };
+//     case "counter/decremented":
+//       return { value: state.value - 1 };
+//     default:
+//       return state;
+//   }
+// }
 
-const api = "test";
-const loginURL = api + "login";
+// const api = "test";
+// const loginURL = api + "login";
 
-function loginReducer(state = { isAuthenticated: false }, form) {
-  axios
-    .post(loginURL, form)
-    .then(() => {
-      return { isAuthenticated: true };
-    })
-    .catch((error) => {
-      console.log(error.response);
-      return { isAuthenticated: false };
-    });
-}
+// function loginReducer(state = { isAuthenticated: false }, form) {
+//   axios
+//     .post(loginURL, form)
+//     .then(() => {
+//       return { isAuthenticated: true };
+//     })
+//     .catch((error) => {
+//       console.log(error.response);
+//       return { isAuthenticated: false };
+//     });
+// }
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-let store = createStore(counterReducer);
+// let store = createStore(counterReducer);
 
 // You can use subscribe() to update the UI in response to state changes.
 // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
 // There may be additional use cases where it's helpful to subscribe as well.
 
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
 // The only way to mutate the internal state is to dispatch an action.
 // The actions can be serialized, logged or stored and later replayed.
-store.dispatch({ type: "counter/incremented" });
+// store.dispatch({ type: "counter/incremented" });
 // {value: 1}
-store.dispatch({ type: "counter/incremented" });
+// store.dispatch({ type: "counter/incremented" });
 // {value: 2}
-store.dispatch({ type: "counter/decremented" });
+// store.dispatch({ type: "counter/decremented" });
 // {value: 1}

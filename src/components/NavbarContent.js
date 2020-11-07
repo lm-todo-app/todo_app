@@ -21,7 +21,7 @@ class NavbarContent extends React.Component {
     if (parts.length === 2) return parts.pop().split(";").shift();
   };
 
-  handleClick = (event) => {
+  handleClick = () => {
     // TODO: refactor this
     const api = "http://localhost:8000/api/v1/";
     const cookie = this.getCookie("csrf_access_token");

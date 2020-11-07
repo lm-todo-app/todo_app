@@ -37,9 +37,8 @@ export const SecondaryButton = () => (
     <Button
       color="secondary"
       onClick={action("Secondary button clicked")}
-      variant="contained"
-    >
-      pb="2rem">
+      variant="contained">
+      Secondary
     </Button>
   </Box>
 );

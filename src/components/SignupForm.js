@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
     }
   };
 
-  handleClick = (event) => {
+  handleClick = () => {
     if (!this.checkPassword()) {
       this.props.enqueueSnackbar("Passwords do not match");
       return;
@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
         username: this.state.username,
         password: this.state.password,
       })
-      .then((response) => {
+      .then(() => {
         const message =
           "Signup Successful, please check for confirmation email";
         this.props.enqueueSnackbar(message, {
