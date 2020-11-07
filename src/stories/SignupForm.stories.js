@@ -1,10 +1,8 @@
-import React from 'react';
-import SignupForm from '../components/SignupForm.js';
+import React from "react";
+import SignupForm from "../components/SignupForm.js";
 
 export default {
-  title: 'Landing/Signup Form',
+  title: "Landing/Signup Form",
 };
 
-export const Form = () => (
-    <SignupForm />
-);
+export const Form = () => <SignupForm />;

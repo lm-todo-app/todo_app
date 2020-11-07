@@ -1,10 +1,8 @@
-import React from 'react';
-import LoginForm from '../components/LoginForm.js';
+import React from "react";
+import LoginForm from "../components/LoginForm.js";
 
 export default {
-  title: 'Landing/Login Form',
+  title: "Landing/Login Form",
 };
 
-export const Form = () => (
-    <LoginForm />
-);
+export const Form = () => <LoginForm />;

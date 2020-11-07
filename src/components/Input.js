@@ -1,7 +1,7 @@
-import React from 'react';
-import Box from '@material-ui/core/Box'
-import TextField from '@material-ui/core/TextField'
-import InputLabel from '@material-ui/core/InputLabel'
+import React from "react";
+import Box from "@material-ui/core/Box";
+import TextField from "@material-ui/core/TextField";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const Input = (props) => (
   <Box pb="2rem">
@@ -11,14 +11,13 @@ const Input = (props) => (
       type={props.type}
       error={props.error}
       name={props.name}
-      value={props.value || ''}
-      onChange={props.onChange} />
+      value={props.value || ""}
+      onChange={props.onChange}
+    />
   </Box>
-)
+);
 
 // Test for jest.
-export const sum = (a, b) => (
-  a + b
-)
+export const sum = (a, b) => a + b;
 
-export default Input
+export default Input;

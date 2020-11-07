@@ -1,8 +1,8 @@
-import React from 'react';
-import Input from '../components/Input.js';
+import React from "react";
+import Input from "../components/Input.js";
 
 export default {
-  title: 'Input',
+  title: "Input",
 };
 
 export const DefaultInput = (props) => (
@@ -13,7 +13,7 @@ export const DefaultInput = (props) => (
     value={props.value}
     onChange={props.onChange}
   />
-)
+);
 
 export const ErrorInput = (props) => (
   <Input
@@ -24,14 +24,14 @@ export const ErrorInput = (props) => (
     value={props.value}
     onChange={props.onChange}
   />
-)
+);
 
 export const RequiredInput = (props) => (
   <Input
-    labelValue={'*'+ props.labelValue}
+    labelValue={"*" + props.labelValue}
     type={props.type}
     name={props.name}
     value={props.value}
     onChange={props.onChange}
   />
-)
+);

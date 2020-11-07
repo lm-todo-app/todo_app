@@ -1,10 +1,8 @@
-import React from 'react';
-import Navbar from '../components/Navbar.js';
+import React from "react";
+import Navbar from "../components/Navbar.js";
 
 export default {
-  title: 'Home/Navbar',
+  title: "Home/Navbar",
 };
 
-export const DefaultNavbar = () => (
-  <Navbar />
-);
+export const DefaultNavbar = () => <Navbar />;
