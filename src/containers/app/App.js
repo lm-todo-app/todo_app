@@ -28,7 +28,7 @@ const App = () => {
       }}
       maxSnack={3}
     >
-      <Router>
+      <Router id="router">
         <Switch>
           <ProtectedRoute exact path="/" component={Home}></ProtectedRoute>
           <Route exact path="/login" component={Login}></Route>

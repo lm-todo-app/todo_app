@@ -7,7 +7,7 @@ import { DefaultNavbar } from "../../stories/Navbar.stories.js";
 import Box from "@material-ui/core/Box";
 
 const Login = () => (
-  <Box>
+  <Box id="login">
     <DefaultNavbar />
     <Container>
       <Box height={80} />
